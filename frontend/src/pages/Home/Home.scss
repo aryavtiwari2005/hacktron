@@ -1,6 +1,7 @@
 .home {
   min-height: 100vh;
   overflow-x: none;
+  width: 100vw;
 
   & nav {
     padding-bottom: 1.5rem;
@@ -27,6 +28,10 @@
     bottom: 0;
     z-index: -1;
   }
+}
+
+.hero {
+  width: 100vw;
 }
 
 .home .logo img {
@@ -93,8 +98,8 @@
 
 .container.hero {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   width: 100vw;
 }
 
