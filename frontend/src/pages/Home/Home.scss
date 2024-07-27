@@ -1,9 +1,8 @@
 .home {
-  background-color: rgb(219, 217, 217);
   min-height: 100vh;
+  overflow-x: none;
 
   & nav {
-    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     color: #333;
 
@@ -11,43 +10,68 @@
       color: #333;
     }
   }
+
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 }
 
 .home .logo img {
   height: 100px;
   width: 80px;
 }
-.nav-bar{
+
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap:1vh;
+  width: 100vw;
+  background: #ffffffce;
+  margin: 0;
+  padding: 0 50px;
 }
-.initiative h2{
+
+.initiative h2 {
   font-size: 4vh;
 }
-.t-b{
+
+.t-b {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25vw;
 }
-.invent-text h4{
-  font-weight:200;
+
+.invent-text h4 {
+  font-weight: 200;
   position: fixed;
   gap: -5px;
 }
-.nav-bar button{
-  padding: 10px;
+
+.nav-bar button {
+  padding: 10px 20px;
   border-radius: 30px;
-  width: 6rem;
-  height:4rem;
 }
-.logo-texts{
+
+.logo-texts {
   letter-spacing: 1px;
   line-height: 2%;
 }
-.logo-texts h4{
+
+.logo-texts h4 {
   font-weight: 200;
   letter-spacing: 1px;
 }
@@ -67,14 +91,17 @@
   }
 }
 
-.hero {
+.container.hero {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 
 .hero-text {
   width: 50%;
+  background-color: #ffffffc3;
+  padding: 20px;
 
   &>* {
     color: #333;
@@ -89,9 +116,11 @@
     color: #333;
   }
 }
-.hero-text p{
+
+.hero-text p {
   font-size: 3vh;
 }
+
 .hero-image {
   width: 50%;
 }
