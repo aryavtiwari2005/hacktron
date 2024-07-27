@@ -15,8 +15,11 @@ const Home = () => {
                <img src={imcLogo}></img>
             </div>
             <div className="t-b">
-            <div className="initiative">
-              <h2>STOCK PILE INDORE</h2>
+              <div className="logo-texts">
+                <div className="initiative">
+                  <h2>STOCK PILE INDORE</h2><br></br>
+                  <h4 className="invent-text">Inventory Management System</h4>
+                </div>
             </div>
 
            <ul className="home-links">

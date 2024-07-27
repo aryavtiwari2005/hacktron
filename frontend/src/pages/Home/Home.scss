@@ -1,5 +1,5 @@
 .home {
-  background-color: white;
+  background-color: rgb(219, 217, 217);
   min-height: 100vh;
 
   & nav {
@@ -32,11 +32,24 @@
   justify-content: space-between;
   gap: 25vw;
 }
+.invent-text h4{
+  font-weight:200;
+  position: fixed;
+  gap: -5px;
+}
 .nav-bar button{
   padding: 10px;
   border-radius: 30px;
   width: 6rem;
   height:4rem;
+}
+.logo-texts{
+  letter-spacing: 1px;
+  line-height: 2%;
+}
+.logo-texts h4{
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 
 .home-links {
@@ -76,7 +89,9 @@
     color: #333;
   }
 }
-
+.hero-text p{
+  font-size: 3vh;
+}
 .hero-image {
   width: 50%;
 }
