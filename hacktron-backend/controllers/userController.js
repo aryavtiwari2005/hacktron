@@ -130,10 +130,25 @@ const logout = asyncHandler(async (req, res) => {
 
 // Get User Data
 const getUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
+    const token = req.cookies.token;
+    let user;
+    if (!token) throw new Error('No Token Found')
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        user = await User.findById(decoded.id);
+
+        if (!user) {
+            res.status(404);
+            throw new Error('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(401);
+        throw new Error('Not authorized, token failed');
+    }
 
     if (user) {
-        const { _id, name, email, photo, phone, bio } = user;
+        const { _id, name, email, phone } = user;
         res.status(200).json({
             _id,
             name,
@@ -162,7 +177,22 @@ const loginStatus = asyncHandler(async (req, res) => {
 
 // Update User
 const updateUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
+    const token = req.cookies.token;
+    let user;
+    if (!token) throw new Error('No Token Found')
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        user = await User.findById(decoded.id);
+
+        if (!user) {
+            res.status(404);
+            throw new Error('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(401);
+        throw new Error('Not authorized, token failed');
+    }
 
     if (user) {
         const { name, email, phone } = user;
@@ -184,7 +214,23 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 const changePassword = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
+    const token = req.cookies.token;
+    let user;
+    if (!token) throw new Error('No Token Found')
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        user = await User.findById(decoded.id);
+
+        if (!user) {
+            res.status(404);
+            throw new Error('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(401);
+        throw new Error('Not authorized, token failed');
+    }
+    
     const { oldPassword, password } = req.body;
 
     if (!user) {
