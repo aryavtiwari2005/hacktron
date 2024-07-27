@@ -10,19 +10,24 @@ const Home = () => {
   return (
     <div className="home">
       <nav className="container --flex-between ">
-        <div className="logo">
-          <img src={imcLogo}></img>
-        </div>
+        <div className="nav-bar">
+            <div className="logo">
+               <img src={imcLogo}></img>
+            </div>
+            <div className="t-b">
+            <div className="initiative">
+              <h2>STOCK PILE INDORE</h2>
+            </div>
 
-        <ul className="home-links">
-          <ShowOnLogout>
-            <li>
+           <ul className="home-links">
+            <ShowOnLogout>
+              <li>
               <button className="--btn --btn-primary">
                 <Link to="/login">Login</Link>
               </button>
             </li>
-          </ShowOnLogout>
-          <ShowOnLogin>
+            </ShowOnLogout>
+            <ShowOnLogin>
             <li>
               <button className="--btn --btn-primary">
                 <Link to="/dashboard">Dashboard</Link>
@@ -30,20 +35,19 @@ const Home = () => {
             </li>
           </ShowOnLogin>
         </ul>
+        </div>
+        </div>
       </nav>
       {/* HERO SECTION */}
       <section className="container hero">
         <div className="hero-text">
-          <h2>Inventory {"&"} Stock Management Solution</h2>
           <p>
-            Inventory system to control and manage proucts in the warehouse in
-            real timeand integrated to make it easier to develop your business.
+            The Indore Municipal Corporation Inventory Management System streamlines resource tracking and allocation, reduces costs, improves efficiency, 
+            and provides real-time insights for informed decision-making, ensuring optimal municipal operations and sustainability.
           </p>
           <div className="hero-buttons">
           </div>
           <div className="--flex-start">
-            <NumberText num="14K" text="Brand Owners" />
-            <NumberText num="23K" text="Active Users" />
             <NumberText num="500+" text="Partners" />
           </div>
         </div>
