@@ -1,8 +1,9 @@
 import React from "react";
-import { RiProductHuntLine } from "react-icons/ri";
+import { RiNetflixLine, RiProductHuntLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 import heroImg from "../../assets/inv-img.png";
+import imcLogo from "../../assets/indore_municipal.png"
 import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLink";
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
     <div className="home">
       <nav className="container --flex-between ">
         <div className="logo">
-          <RiProductHuntLine size={35} />
+          <img src={imcLogo}></img>
         </div>
 
         <ul className="home-links">
@@ -39,9 +40,6 @@ const Home = () => {
             real timeand integrated to make it easier to develop your business.
           </p>
           <div className="hero-buttons">
-            <button className="--btn --btn-secondary">
-              <Link to="/dashboard">Free Trial 1 Month</Link>
-            </button>
           </div>
           <div className="--flex-start">
             <NumberText num="14K" text="Brand Owners" />
@@ -61,8 +59,8 @@ const Home = () => {
 const NumberText = ({ num, text }) => {
   return (
     <div className="--mr">
-      <h3 className="--color-white">{num}</h3>
-      <p className="--color-white">{text}</p>
+      <h3 className="--color-black">{num}</h3>
+      <p className="--color-black">{text}</p>
     </div>
   );
 };

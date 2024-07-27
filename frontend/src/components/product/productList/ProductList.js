@@ -102,6 +102,7 @@ const ProductList = ({ products, isLoading }) => {
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Expiry</th>
+                  <th>SKU Code</th>
                   <th>Value</th>
                   <th>Action</th>
                 </tr>
@@ -109,7 +110,7 @@ const ProductList = ({ products, isLoading }) => {
 
               <tbody>
                 {currentItems.map((product, index) => {
-                  const { _id, name, expiry, price, quantity } = product;
+                  const { _id, name, expiry, price, quantity, itemsku } = product;
                   return (
                     <tr key={_id}>
                       <td>{index + 1}</td>
@@ -120,6 +121,7 @@ const ProductList = ({ products, isLoading }) => {
                       </td>
                       <td>{quantity}</td>
                       <td>{expiry}</td>
+                      <td>{itemsku}</td>
                       <td>
                         {"Rs."}
                         {price * quantity}

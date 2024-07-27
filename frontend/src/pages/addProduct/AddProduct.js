@@ -7,15 +7,12 @@ import {
   createProduct,
   selectIsLoading,
 } from "../../redux/features/product/productSlice";
-import axios from "axios";
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API_URL = `${BACKEND_URL}/api/products/`;
 
 const initialState = {
   name: "",
   quantity: "",
   price: "",
-  expiry: ""
+  expiry: "",
 };
 
 const AddProduct = () => {
@@ -32,6 +29,13 @@ const AddProduct = () => {
     setProduct({ ...product, [name]: value });
   };
 
+  const generateKSKU = (name) => {
+    const letter = name.slice(0, 3).toUpperCase();
+    const number = new Date().getMilliseconds();
+    const sku = letter + "-" + number;
+    return sku;
+  };
+
   const saveProduct = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -44,7 +48,8 @@ const AddProduct = () => {
       name: name,
       quantity: quantity,
       price: price,
-      expiry: expiry
+      expiry: expiry,
+      itemsku: generateKSKU(name)
     };
     console.log(object)
 

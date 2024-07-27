@@ -3,7 +3,7 @@ const Product = require("../models/productModel")
 
 // Create Product
 const createProduct = asyncHandler(async (req, res) => {
-    const { name, expiry, quantity, price } = req.body
+    const { name, expiry, quantity, price, itemsku } = req.body
     if (!name || !quantity || !price) {
         console.log(req.body)
         res.status(400);
@@ -15,6 +15,7 @@ const createProduct = asyncHandler(async (req, res) => {
         expiry,
         quantity,
         price,
+        itemsku
     });
 
     res.status(201).json(product);
@@ -53,8 +54,6 @@ const deleteProduct = asyncHandler(async (req, res) => {
 const updateProduct = asyncHandler(async (req, res) => {
     const { name, quantity, price } = req.body;
     const { id } = req.params;
-
-    console.log(req.body)
 
     const product = await Product.findById(id);
 

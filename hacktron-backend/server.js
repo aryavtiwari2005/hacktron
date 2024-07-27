@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const app = express()
 const productRoute = require('./routes/productRoutes')
 const userRoute = require('./routes/userRoutes')
+const orderRoute = require('./routes/orderRoutes')
 const PORT = process.env.PORT || 5000
 const mongo_uri = process.env.MONGO_URI
 
@@ -25,6 +26,7 @@ app.use(
 //Routes
 app.use("/api/products", productRoute);
 app.use("/api/users", userRoute)
+app.use("/api/orders", orderRoute)
 app.get('/', (req, res) => {
     res.send('Backend home :)')
 })

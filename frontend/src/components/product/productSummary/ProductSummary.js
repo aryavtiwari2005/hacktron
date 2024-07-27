@@ -59,12 +59,6 @@ const ProductSummary = ({ products }) => {
           count={outOfStock}
           bgColor="card3"
         />
-        <InfoBox
-          icon={categoryIcon}
-          title={"All Categories"}
-          count={category.length}
-          bgColor="card4"
-        />
       </div>
     </div>
   );
