@@ -32,6 +32,7 @@
 
 .hero {
   width: 100vw;
+  padding: 0 50px;
 }
 
 .home .logo img {
@@ -44,13 +45,18 @@
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  background: #ffffffce;
+  background: #ffffff79;
   margin: 0;
   padding: 0 50px;
 }
 
 .initiative h2 {
   font-size: 4vh;
+  letter-spacing: -1px;
+}
+
+.invent-text {
+  font-weight: 800;
 }
 
 .t-b {
@@ -60,10 +66,9 @@
   gap: 25vw;
 }
 
-.invent-text h4 {
+.initiative h4 {
   font-weight: 200;
-  position: fixed;
-  gap: -5px;
+  letter-spacing: 2px;
 }
 
 .nav-bar button {
@@ -101,15 +106,16 @@
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+  padding-left: 100px;
 }
 
 .hero-text {
-  width: 50%;
-  background-color: #ffffffc3;
+  width: 500px;
+  background-color: #333333a8;
   padding: 20px;
 
   &>* {
-    color: #333;
+    color: #fff;
     margin-bottom: 2rem;
   }
 
@@ -127,7 +133,13 @@
 }
 
 .hero-image {
-  width: 50%;
+  margin-top: 3.2%;
+  width: 50px;
+}
+
+img {
+  width: 400px;
+  align-self: baseline;
 }
 
 @media screen and (max-width: 600px) {

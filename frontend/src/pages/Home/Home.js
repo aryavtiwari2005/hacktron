@@ -21,7 +21,7 @@ const Home = () => {
           <div className="t-b">
             <div className="logo-texts">
               <div className="initiative">
-                <h2>STOCK PILE INDORE</h2><br></br>
+                <h2>STOCK PILE INDORE</h2>
                 <h4 className="invent-text">Inventory Management System</h4>
               </div>
             </div>
@@ -70,8 +70,8 @@ const Home = () => {
 const NumberText = ({ num, text }) => {
   return (
     <div className="--mr">
-      <h3 className="--color-black">{num}</h3>
-      <p className="--color-black">{text}</p>
+      <h3 className="--color-white">{num}</h3>
+      <p className="--color-white">{text}</p>
     </div>
   );
 };

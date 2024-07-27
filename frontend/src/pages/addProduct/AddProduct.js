@@ -13,6 +13,7 @@ const initialState = {
   quantity: "",
   price: "",
   expiry: "",
+  category: ""
 };
 
 const AddProduct = () => {
@@ -22,7 +23,7 @@ const AddProduct = () => {
 
   const isLoading = useSelector(selectIsLoading);
 
-  const { name, quantity, price, expiry } = product;
+  const { name, quantity, price, expiry, category } = product;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +50,8 @@ const AddProduct = () => {
       quantity: quantity,
       price: price,
       expiry: expiry,
-      itemsku: generateKSKU(name)
+      itemsku: generateKSKU(name),
+      category: category
     };
     console.log(object)
 

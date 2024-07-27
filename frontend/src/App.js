@@ -17,6 +17,7 @@ import { SET_LOGIN } from "./redux/features/auth/authSlice";
 import AddProduct from "./pages/addProduct/AddProduct";
 import AddOrder from "./pages/addOrder/AddOrder";
 import ProductDetail from "./components/product/productDetail/ProductDetail";
+import ProductCategories from "./pages/productCategories/productCategories";
 import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
@@ -66,6 +67,16 @@ function App() {
           }
         />
         <Route
+          path="/product-categories"
+          element={
+            <Sidebar>
+              <Layout>
+                <ProductCategories />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
           path="/add-order"
           element={
             <Sidebar>
@@ -75,6 +86,7 @@ function App() {
             </Sidebar>
           }
         />
+
         <Route
           path="/product-detail/:id"
           element={

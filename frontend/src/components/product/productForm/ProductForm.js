@@ -58,6 +58,15 @@ const ProductForm = ({
             onChange={handleInputChange}
           />
 
+          <label>Product Category:</label>
+          <input
+            type="text"
+            placeholder="Product Category"
+            name="category"
+            value={product?.category}
+            onChange={handleInputChange}
+          />
+
           <div className="--my">
             <button type="submit" className="--btn --btn-primary">
               Save Product
