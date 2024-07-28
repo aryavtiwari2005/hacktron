@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler')
 const Product = require("../models/productModel")
+const { sendEmail, sendMailsToEveryone } = require("../services/emailService")
 
 // Create Product
 const createProduct = asyncHandler(async (req, res) => {
@@ -9,6 +10,8 @@ const createProduct = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error("Please fill in all fields");
     }
+
+    if (quantity <= 0) await sendMailsToEveryone();
 
     const product = await Product.create({
         name,
@@ -80,6 +83,7 @@ const updateProduct = asyncHandler(async (req, res) => {
         }
     );
 
+    sendMailsToEveryone();
     res.status(200).json(updatedProduct);
 });
 
