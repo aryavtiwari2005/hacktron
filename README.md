@@ -12,8 +12,8 @@ Our project enhances the inventory management capabilities for the Indore Munici
 2. **Status Tracking:**
    - A real-time status page enables users to monitor the progress of their inventory and transactions seamlessly.
 
-3. **Customer Support Integration:**
-   - An embedded customer service module offers immediate assistance for any issues or inquiries, ensuring prompt resolution.
+3. **Internal communication:**
+   - An embedded internal communication service module offers immediate assistance for any issues or inquiries, ensuring prompt resolution.
 
 4. **Document Management:**
    - Users can download bills and balance documents directly from the platform, enhancing record-keeping and accessibility.
