@@ -16,6 +16,21 @@ const orderSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add an sku"],
       trim: true
+    },
+    location: {
+      type: String,
+      required: [true, "Please add a location"],
+      trim: true
+    },
+    phone: {
+      type: String,
+      required: [true, "Please add a phone number"],
+      trim: true
+    },
+    status: {
+      type: String,
+      default: "Pending",
+      trim: true
     }
   },
   {

@@ -12,6 +12,8 @@ const initialState = {
     name: "",
     itemsku: "",
     quantity: "",
+    location: "",
+    phone: ""
 };
 
 const AddOrder = () => {
@@ -21,7 +23,7 @@ const AddOrder = () => {
 
     const isLoading = useSelector(selectIsLoading);
 
-    const { name, itemsku, quantity } = order;
+    const { name, itemsku, quantity, location, phone } = order;
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -38,7 +40,9 @@ const AddOrder = () => {
         var object = {
             name: name,
             itemsku: itemsku,
-            quantity: quantity
+            quantity: quantity,
+            location: location,
+            phone: phone
         };
         console.log(object)
 
@@ -50,7 +54,7 @@ const AddOrder = () => {
     return (
         <div>
             {isLoading && <Loader />}
-            <h3 className="--mt">Add New Product</h3>
+            <h3 className="--mt">Create New Order</h3>
             <OrderForm
                 order={order}
                 handleInputChange={handleInputChange}

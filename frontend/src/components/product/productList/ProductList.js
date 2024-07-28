@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios"
 import { SpinnerImg } from "../../loader/Loader";
 import "./productList.scss";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
@@ -54,6 +55,30 @@ const ProductList = ({ products, isLoading }) => {
       ],
     });
   };
+
+  // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  // const API_URL = `${BACKEND_URL}/api/`;
+
+  // const checkProductsAndSendEmails = async () => {
+  //   try {
+  //     const response = await axios.post(`${API_URL}send-email/`, { email: JSON.parse(localStorage.getItem("email")) });
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error('Error checking products', error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(FILTER_PRODUCTS({ products, search }));
+  // }, [products, search, dispatch]);
+
+  // useEffect(() => {
+  //   checkProductsAndSendEmails();
+  // }, [products]);
 
   //   Begin Pagination
   const [currentItems, setCurrentItems] = useState([]);

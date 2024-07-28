@@ -1,0 +1,36 @@
+.order-details {
+    h3 {
+        font-size: 27px;
+        margin-top: 20px;
+    }
+
+    ul li {
+        font-size: 20px;
+        color: #333;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: lightblue;
+        margin: 5px 0;
+    }
+}
+
+.shipping-area {
+    margin-top: 10px;
+    h4 {
+        margin: 5px 0;
+    }
+    .actions {
+        display: flex;
+        flex-direction: column;
+    }
+    .actions button {
+        margin: 5px 0;
+        border-radius: 0;
+    }
+}

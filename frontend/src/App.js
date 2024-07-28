@@ -22,6 +22,8 @@ import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import Contact from "./pages/contact/Contact";
+import OrderStatus from "./pages/orderStatus/orderStatus";
+import Message from "./pages/message/Message"
 
 axios.defaults.withCredentials = true;
 
@@ -57,6 +59,16 @@ function App() {
           }
         />
         <Route
+          path="/messaging"
+          element={
+            <Sidebar>
+              <Layout>
+                <Message />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
           path="/add-product"
           element={
             <Sidebar>
@@ -72,6 +84,16 @@ function App() {
             <Sidebar>
               <Layout>
                 <ProductCategories />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/order-status"
+          element={
+            <Sidebar>
+              <Layout>
+                <OrderStatus />
               </Layout>
             </Sidebar>
           }

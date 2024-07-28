@@ -49,6 +49,11 @@ const CategoryList = ({ products, isLoading }) => {
         fetchProducts();
     }, [dispatch]);
 
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const handleCategoryClick = (category) => {
+        setSelectedCategory((prevCategory) => (prevCategory === category ? null : category));
+    };
+
     return (
         <div className="product-category">
             <h3>Product Categories</h3>
@@ -59,17 +64,19 @@ const CategoryList = ({ products, isLoading }) => {
                     {Object.keys(groupedProducts).length > 0 ? (
                         Object.keys(groupedProducts).map((category) => (
                             <div className="category" key={category}>
-                                <div className="heading">
+                                <div className="heading" onClick={() => handleCategoryClick(category)}>
                                     <FaDotCircle />
                                     <h4>{category}</h4>
                                 </div>
-                                <ul>
-                                    {groupedProducts[category].map((product, index) => (
-                                        <li key={product.id || index}>
-                                            {product.name}
-                                        </li>
-                                    ))}
-                                </ul>
+                                {selectedCategory === category && (
+                                    <ul>
+                                        {groupedProducts[category].map((product, index) => (
+                                            <li key={product.id || index}>
+                                                {product.name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
                         ))
                     ) : (

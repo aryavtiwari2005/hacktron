@@ -161,6 +161,24 @@ const getUser = asyncHandler(async (req, res) => {
     }
 });
 
+const getallUsers = asyncHandler(async (req, res) => {
+    const users = await User.find();
+    let newUsers = [];
+    for (let user of users) {
+        let name = user.name
+        let email = user.email
+        let id = user._id
+        newUsers.push({
+            id: id,
+            name: name,
+            email: email
+        })
+    }
+    if (newUsers) {
+        res.status(200).json({ newUsers })
+    }
+})
+
 // Get Login Status
 const loginStatus = asyncHandler(async (req, res) => {
     const token = req.cookies.token;
@@ -230,7 +248,7 @@ const changePassword = asyncHandler(async (req, res) => {
         res.status(401);
         throw new Error('Not authorized, token failed');
     }
-    
+
     const { oldPassword, password } = req.body;
 
     if (!user) {
@@ -265,4 +283,5 @@ module.exports = {
     loginStatus,
     updateUser,
     changePassword,
+    getallUsers
 };

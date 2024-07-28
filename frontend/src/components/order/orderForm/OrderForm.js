@@ -40,6 +40,24 @@ const OrderForm = ({
             onChange={handleInputChange}
           />
 
+          <label>Order Location:</label>
+          <input
+            type="text"
+            placeholder="Order Location"
+            name="location"
+            value={order?.location}
+            onChange={handleInputChange}
+          />
+
+          <label>Phone Number:</label>
+          <input
+            type="text"
+            placeholder="Phone Number"
+            name="phone"
+            value={order?.phone}
+            onChange={handleInputChange}
+          />
+
           <div className="--my">
             <button type="submit" className="--btn --btn-primary">
               Place Order
