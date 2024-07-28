@@ -45,7 +45,7 @@ const Message = () => {
     };
 
     return (
-        <div>
+        <div className="messaging">
             <h2 style={{ margin: "10px 0" }}>Chat</h2>
             <hr />
             <div>
