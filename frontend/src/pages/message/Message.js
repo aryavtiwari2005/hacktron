@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Message.scss"
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 const Message = () => {
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
@@ -11,7 +13,7 @@ const Message = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await axios.get('http://localhost:8000/api/users/getallusers');
+            const response = await axios.get(`${BACKEND_URL}/api/users/getallusers`);
             setUsers(response.data.newUsers);
         };
 
@@ -25,13 +27,13 @@ const Message = () => {
     }
 
     const fetchMessages = async (userId) => {
-        const response = await axios.get(`http://localhost:8000/api/messages/${mainuserId}/${userId}`);
+        const response = await axios.get(`${BACKEND_URL}/api/messages/${mainuserId}/${userId}`);
         setMessages(response.data);
     };
 
     const handleSendMessage = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:8000/api/messages', {
+        const response = await axios.post(`${BACKEND_URL}/api/messages`, {
             senderId: mainuserId,
             receiverId: selectedUser.id,
             senderName: JSON.parse(localStorage.getItem("name")),
